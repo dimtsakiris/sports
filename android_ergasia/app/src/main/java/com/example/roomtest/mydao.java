@@ -11,27 +11,27 @@ import androidx.room.Update;
 @Dao
 public interface mydao {
     @Insert
-    public void insert_athlhma(athlhma athlhma);
+    public void insert_athlhma(Sport Sport);
     @Insert
     public void insert_athlhths(athlhths athlhths);
     @Insert
-    public void insert_omada(omada omada);
+    public void insert_omada(Team Team);
 
     @Delete
-    public void delete_athlhma(athlhma athlhma);
+    public void delete_athlhma(Sport Sport);
 
     @Delete
     public void delete_atlhths(athlhths athlhths);
     @Delete
-    public void delete_omada(omada omada);
+    public void delete_omada(Team Team);
 
     @Update
-    public void update_athlhma(athlhma athlhma);
+    public void update_athlhma(Sport Sport);
 
     @Update
     public void update_athlhths(athlhths athlhths);
     @Update
-    public void update_omada(omada omada);
+    public void update_omada(Team Team);
 
     @Query("select * from users")
     public List<user> getusers();

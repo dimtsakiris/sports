@@ -7,8 +7,8 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 
 @Entity(tableName = "omada_table",primaryKeys = {"code_team","athlhma_kwdikos"},
-        foreignKeys = {@ForeignKey(entity = athlhma.class,parentColumns = "kwdikos",childColumns = "athlhma_kwdikos",onDelete = ForeignKey.CASCADE,onUpdate = ForeignKey.CASCADE)})
-public class omada {
+        foreignKeys = {@ForeignKey(entity = Sport.class,parentColumns = "kwdikos",childColumns = "athlhma_kwdikos",onDelete = ForeignKey.CASCADE,onUpdate = ForeignKey.CASCADE)})
+public class Team {
     @ColumnInfo(name="code_team")@NonNull
     private int kwdikos_omadas;
 

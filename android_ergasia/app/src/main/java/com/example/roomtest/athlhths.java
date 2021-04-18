@@ -4,10 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
-import androidx.room.PrimaryKey;
 
 @Entity(tableName = "athlhths_table",primaryKeys = {"code_athlhth","athlhma_kwdikos"},
-foreignKeys = {@ForeignKey(entity = athlhma.class,parentColumns = "kwdikos",childColumns = "athlhma_kwdikos",onDelete = ForeignKey.CASCADE,onUpdate = ForeignKey.CASCADE)})
+foreignKeys = {@ForeignKey(entity = Sport.class,parentColumns = "kwdikos",childColumns = "athlhma_kwdikos",onDelete = ForeignKey.CASCADE,onUpdate = ForeignKey.CASCADE)})
 public class athlhths {
 @ColumnInfo(name="code_athlhth")@NonNull
     private int kwdikos_athlhth;

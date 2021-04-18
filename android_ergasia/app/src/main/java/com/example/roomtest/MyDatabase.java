@@ -3,7 +3,7 @@ package com.example.roomtest;
 import androidx.room.Database;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {athlhma.class,athlhths.class,omada.class},version=1)
+@Database(entities = {Sport.class,athlhths.class, Team.class},version=1)
 public abstract class MyDatabase extends RoomDatabase {
     public abstract mydao mydaotemp();
 }
