@@ -5,83 +5,68 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 
-@Entity(tableName = "athlete_table",primaryKeys = {"code_athlete","id_sport"},
-foreignKeys = {@ForeignKey(entity = Sport.class,parentColumns = "id",childColumns = "id_sport",onDelete = ForeignKey.CASCADE,onUpdate = ForeignKey.CASCADE)})
+@Entity(tableName = "athlete", primaryKeys = {"id", "id_sport"},
+        foreignKeys = {@ForeignKey(entity = Sport.class, parentColumns = "id", childColumns = "id_sport", onDelete = ForeignKey.CASCADE, onUpdate = ForeignKey.CASCADE)})
 public class Athlete {
-@ColumnInfo(name="id_athlete")@NonNull
-    private int id_athlete;
 
-@ColumnInfo(name="id_sport") @NonNull
-private int id_sport;
+    @ColumnInfo(name = "id")
+    @NonNull
+    private int id;
 
-@ColumnInfo(name="name_athlete")
-private String name_athlete;
+    @ColumnInfo(name = "id_sport")
+    @NonNull
+    private int idSport;
 
-@ColumnInfo(name="surname_athlete")
-private String surname_athlete;
+    @ColumnInfo(name = "name")
+    private String name;
 
-@ColumnInfo(name="city_athlete")
-private String city;
+    @ColumnInfo(name = "surname")
+    private String surname;
 
-@ColumnInfo(name="country_athlete")
-private String country;
+    @ColumnInfo(name = "city")
+    private String city;
 
-@ColumnInfo(name = "date_athlete")
-private String birthday;
+    @ColumnInfo(name = "country")
+    private String country;
 
-    public int getId_athlete() {
-        return id_athlete;
+    @ColumnInfo(name = "birthday")
+    private String birthday;
+
+    public Athlete(int id, int idSport, String name, String surname, String city, String country, String birthday) {
+        this.id = id;
+        this.idSport = idSport;
+        this.name = name;
+        this.surname = surname;
+        this.city = city;
+        this.country = country;
+        this.birthday = birthday;
     }
 
-    public void setId_athlete(int id_athlete) {
-        this.id_athlete = id_athlete;
+    public int getId() {
+        return id;
     }
 
-    public int getId_sport() {
-        return id_sport;
+    public int getIdSport() {
+        return idSport;
     }
 
-    public void setId_sport(int id_sport) {
-        this.id_sport = id_sport;
+    public String getName() {
+        return name;
     }
 
-    public String getName_athlete() {
-        return name_athlete;
-    }
-
-    public void setName_athlete(String name_athlete) {
-        this.name_athlete = name_athlete;
-    }
-
-    public String getSurname_athlete() {
-        return surname_athlete;
-    }
-
-    public void setSurname_athlete(String surname_athlete) {
-        this.surname_athlete = surname_athlete;
+    public String getSurname() {
+        return surname;
     }
 
     public String getCity() {
         return city;
     }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
-
     public String getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
     public String getBirthday() {
         return birthday;
-    }
-
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
     }
 }
