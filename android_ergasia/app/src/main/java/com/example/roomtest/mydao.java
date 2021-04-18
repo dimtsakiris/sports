@@ -13,7 +13,7 @@ public interface mydao {
     @Insert
     public void insert_athlhma(Sport Sport);
     @Insert
-    public void insert_athlhths(athlhths athlhths);
+    public void insert_athlhths(Athlete athlete);
     @Insert
     public void insert_omada(Team Team);
 
@@ -21,7 +21,7 @@ public interface mydao {
     public void delete_athlhma(Sport Sport);
 
     @Delete
-    public void delete_atlhths(athlhths athlhths);
+    public void delete_atlhths(Athlete athlete);
     @Delete
     public void delete_omada(Team Team);
 
@@ -29,7 +29,7 @@ public interface mydao {
     public void update_athlhma(Sport Sport);
 
     @Update
-    public void update_athlhths(athlhths athlhths);
+    public void update_athlhths(Athlete athlete);
     @Update
     public void update_omada(Team Team);
 

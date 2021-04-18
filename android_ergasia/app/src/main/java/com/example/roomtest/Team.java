@@ -6,83 +6,83 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 
-@Entity(tableName = "omada_table",primaryKeys = {"code_team","athlhma_kwdikos"},
-        foreignKeys = {@ForeignKey(entity = Sport.class,parentColumns = "kwdikos",childColumns = "athlhma_kwdikos",onDelete = ForeignKey.CASCADE,onUpdate = ForeignKey.CASCADE)})
+@Entity(tableName = "team_table",primaryKeys = {"id_team","sport_id"},
+        foreignKeys = {@ForeignKey(entity = Sport.class,parentColumns = "id",childColumns = "sport_id",onDelete = ForeignKey.CASCADE,onUpdate = ForeignKey.CASCADE)})
 public class Team {
-    @ColumnInfo(name="code_team")@NonNull
-    private int kwdikos_omadas;
+    @ColumnInfo(name="id_team")@NonNull
+    private int id_team;
 
-    @ColumnInfo(name="athlhma_kwdikos") @NonNull
-    private int kwdikos_athlhmatos;
+    @ColumnInfo(name="sport_id") @NonNull
+    private int id_sport;
 
-    @ColumnInfo(name="name_omadas")
-    private String onoma_omadas;
+    @ColumnInfo(name="name_team")
+    private String team_name;
 
-    @ColumnInfo(name="name_ghpedou")
-    private String onoma_ghpedou;
+    @ColumnInfo(name="name_stadium")
+    private String stadium_name;
 
-    @ColumnInfo(name="city_omadas")
-    private String poli_omadas;
+    @ColumnInfo(name="city_team")
+    private String team_city;
 
-    @ColumnInfo(name = "country_omadas")
-    private String xwra_omadas;
+    @ColumnInfo(name = "country_team")
+    private String team_country;
 
-    @ColumnInfo(name="year_idrisis")
-    private String etos_idrisis;
+    @ColumnInfo(name="year_establishment")
+    private String establishment_year;
 
-    public int getKwdikos_omadas() {
-        return kwdikos_omadas;
+    public int getId_team() {
+        return id_team;
     }
 
-    public void setKwdikos_omadas(int kwdikos_omadas) {
-        this.kwdikos_omadas = kwdikos_omadas;
+    public void setId_team(int id_team) {
+        this.id_team = id_team;
     }
 
-    public int getKwdikos_athlhmatos() {
-        return kwdikos_athlhmatos;
+    public int getId_sport() {
+        return id_sport;
     }
 
-    public void setKwdikos_athlhmatos(int kwdikos_athlhmatos) {
-        this.kwdikos_athlhmatos = kwdikos_athlhmatos;
+    public void setId_sport(int id_sport) {
+        this.id_sport = id_sport;
     }
 
-    public String getOnoma_omadas() {
-        return onoma_omadas;
+    public String getTeam_name() {
+        return team_name;
     }
 
-    public void setOnoma_omadas(String onoma_omadas) {
-        this.onoma_omadas = onoma_omadas;
+    public void setTeam_name(String team_name) {
+        this.team_name = team_name;
     }
 
-    public String getOnoma_ghpedou() {
-        return onoma_ghpedou;
+    public String getStadium_name() {
+        return stadium_name;
     }
 
-    public void setOnoma_ghpedou(String onoma_ghpedou) {
-        this.onoma_ghpedou = onoma_ghpedou;
+    public void setStadium_name(String stadium_name) {
+        this.stadium_name = stadium_name;
     }
 
-    public String getPoli_omadas() {
-        return poli_omadas;
+    public String getTeam_city() {
+        return team_city;
     }
 
-    public void setPoli_omadas(String poli_omadas) {
-        this.poli_omadas = poli_omadas;
+    public void setTeam_city(String team_city) {
+        this.team_city = team_city;
     }
 
-    public String getXwra_omadas() {
-        return xwra_omadas;
+    public String getTeam_country() {
+        return team_country;
     }
 
-    public void setXwra_omadas(String xwra_omadas) {
-        this.xwra_omadas = xwra_omadas;
+    public void setTeam_country(String team_country) {
+        this.team_country = team_country;
     }
 
-    public String getEtos_idrisis() {
-        return etos_idrisis;
+    public String getEstablishment_year() {
+        return establishment_year;
     }
 
-    public void setEtos_idrisis(String etos_idrisis) {
-        this.etos_idrisis = etos_idrisis;
+    public void setEstablishment_year(String establishment_year) {
+        this.establishment_year = establishment_year;
     }
 }
