@@ -18,17 +18,28 @@ public class Sport {
     private String kind;
 
     @ColumnInfo(name = "gender")
-    private Gender gender;
+    private String gender;
 
-    public Sport(int id, String name, String kind, Gender gender) {
+    public Sport(int id, String name, String kind, String gender) {
         this.id = id;
         this.name = name;
         this.kind = kind;
         this.gender = gender;
     }
 
-    public enum Gender {
-        FEMALE,
-        MALE
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getKind() {
+        return kind;
+    }
+
+    public String getGender() {
+        return gender;
     }
 }

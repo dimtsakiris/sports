@@ -69,4 +69,17 @@ public class Athlete {
     public String getBirthday() {
         return birthday;
     }
+
+    @Override
+    public String toString() {
+        return "Athlete{" +
+                "id=" + id +
+                ", idSport=" + idSport +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                ", birthday='" + birthday + '\'' +
+                '}';
+    }
 }
