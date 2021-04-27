@@ -6,83 +6,76 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 
-@Entity(tableName = "team_table",primaryKeys = {"id_team","sport_id"},
-        foreignKeys = {@ForeignKey(entity = Sport.class,parentColumns = "id",childColumns = "sport_id",onDelete = ForeignKey.CASCADE,onUpdate = ForeignKey.CASCADE)})
+@Entity(tableName = "team",primaryKeys = {"id_team","sport_id"},
+        foreignKeys = {@ForeignKey(entity = Sport.class,parentColumns = "id",childColumns = "sport",onDelete = ForeignKey.CASCADE,onUpdate = ForeignKey.CASCADE)})
 public class Team {
-    @ColumnInfo(name="id_team")@NonNull
-    private int id_team;
+    @ColumnInfo(name="id")@NonNull
+    private int id;
 
-    @ColumnInfo(name="sport_id") @NonNull
-    private int id_sport;
+    @ColumnInfo(name="sport") @NonNull
+    private int idSport;
 
-    @ColumnInfo(name="name_team")
-    private String team_name;
+    @ColumnInfo(name="name")
+    private String name;
 
-    @ColumnInfo(name="name_stadium")
-    private String stadium_name;
+    @ColumnInfo(name="stadium")
+    private String stadium;
 
-    @ColumnInfo(name="city_team")
-    private String team_city;
+    @ColumnInfo(name="city")
+    private String city;
 
-    @ColumnInfo(name = "country_team")
-    private String team_country;
+    @ColumnInfo(name = "country")
+    private String country;
 
-    @ColumnInfo(name="year_establishment")
-    private String establishment_year;
+    @ColumnInfo(name="establishment")
+    private String establishment;
 
-    public int getId_team() {
-        return id_team;
+    public Team(int id, int idSport, String name, String stadium, String city, String country, String establishment) {
+        this.id = id;
+        this.idSport = idSport;
+        this.name = name;
+        this.stadium = stadium;
+        this.city = city;
+        this.country = country;
+        this.establishment = establishment;
     }
 
-    public void setId_team(int id_team) {
-        this.id_team = id_team;
+    public int getId() {
+        return id;
+    }
+    
+    public int getIdSport() {
+        return idSport;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public String getStadium() {
+        return stadium;
+    }
+    
+    public String getCity() { return city; }
+    
+    public String getCountry() {
+        return country;
+    }
+    
+    public String getEstablishment() {
+        return establishment;
     }
 
-    public int getId_sport() {
-        return id_sport;
-    }
-
-    public void setId_sport(int id_sport) {
-        this.id_sport = id_sport;
-    }
-
-    public String getTeam_name() {
-        return team_name;
-    }
-
-    public void setTeam_name(String team_name) {
-        this.team_name = team_name;
-    }
-
-    public String getStadium_name() {
-        return stadium_name;
-    }
-
-    public void setStadium_name(String stadium_name) {
-        this.stadium_name = stadium_name;
-    }
-
-    public String getTeam_city() {
-        return team_city;
-    }
-
-    public void setTeam_city(String team_city) {
-        this.team_city = team_city;
-    }
-
-    public String getTeam_country() {
-        return team_country;
-    }
-
-    public void setTeam_country(String team_country) {
-        this.team_country = team_country;
-    }
-
-    public String getEstablishment_year() {
-        return establishment_year;
-    }
-
-    public void setEstablishment_year(String establishment_year) {
-        this.establishment_year = establishment_year;
+    @Override
+    public String toString() {
+        return "Team{" +
+                "id=" + id +
+                ", idSport=" + idSport +
+                ", name='" + name + '\'' +
+                ", stadium='" + stadium + '\'' +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                ", establishment='" + establishment + '\'' +
+                '}';
     }
 }
