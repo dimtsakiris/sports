@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_matches"
+            android:icon="@mipmap/icons8_soccer_ball_48"
+            android:title="@string/menu_matches" />
+        <item
+            android:id="@+id/nav_sport"
+            android:icon="@mipmap/icons8_baseball_48"
+            android:title="@string/menu_sport" />
+        <item
+            android:id="@+id/nav_athletes"
+            android:icon="@mipmap/icons8_ultimate_frisbee_96"
+            android:title="@string/menu_athletes" />
+        <item
+            android:id="@+id/nav_teams"
+            android:icon="@mipmap/icons8_teams_24"
+            android:title="@string/menu_teams" />
+    </group>
+</menu>

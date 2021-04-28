@@ -1,4 +1,4 @@
-package com.example.roomtest;
+package com.example.roomtest.team;
 
 
 import androidx.annotation.NonNull;
@@ -6,13 +6,15 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 
-@Entity(tableName = "team",primaryKeys = {"id_team","sport_id"},
-        foreignKeys = {@ForeignKey(entity = Sport.class,parentColumns = "id",childColumns = "sport",onDelete = ForeignKey.CASCADE,onUpdate = ForeignKey.CASCADE)})
+import com.example.roomtest.sport.Sport;
+
+@Entity(tableName = "team",primaryKeys = {"id_team","id_sport"},
+        foreignKeys = {@ForeignKey(entity = Sport.class,parentColumns = "id",childColumns = "id_sport",onDelete = ForeignKey.CASCADE,onUpdate = ForeignKey.CASCADE)})
 public class Team {
-    @ColumnInfo(name="id")@NonNull
+    @ColumnInfo(name="id_team")@NonNull
     private int id;
 
-    @ColumnInfo(name="sport") @NonNull
+    @ColumnInfo(name="id_sport") @NonNull
     private int idSport;
 
     @ColumnInfo(name="name")

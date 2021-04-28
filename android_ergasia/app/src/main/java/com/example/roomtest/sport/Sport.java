@@ -1,4 +1,4 @@
-package com.example.roomtest;
+package com.example.roomtest.sport;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

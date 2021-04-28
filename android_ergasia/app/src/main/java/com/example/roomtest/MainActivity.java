@@ -3,11 +3,21 @@ package com.example.roomtest;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.room.Room;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+import androidx.navigation.NavController;
+
+import com.example.roomtest.room.MyDatabase;
+import com.google.android.material.navigation.NavigationView;
+
 
 public class MainActivity extends AppCompatActivity {
 
     public static MyDatabase myDatabase;
+    private AppBarConfiguration mAppBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +30,25 @@ public class MainActivity extends AppCompatActivity {
 
         System.out.println(myDatabase.mydaotemp().findAllAthletes());
 
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
 
+        mAppBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.nav_matches, R.id.nav_sport, R.id.nav_athletes, R.id.nav_teams)
+                .setOpenableLayout(drawer)
+                .build();
+
+
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        NavigationUI.setupWithNavController(navigationView, navController);
+
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
+                || super.onSupportNavigateUp();
     }
 }

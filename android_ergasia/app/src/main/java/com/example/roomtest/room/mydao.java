@@ -1,10 +1,14 @@
-package com.example.roomtest;
+package com.example.roomtest.room;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
+
+import com.example.roomtest.athlete.Athlete;
+import com.example.roomtest.sport.Sport;
+import com.example.roomtest.team.Team;
 
 import java.util.List;
 
