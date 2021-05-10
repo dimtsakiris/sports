@@ -56,6 +56,34 @@ public class Athlete {
         return name;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setIdSport(int idSport) {
+        this.idSport = idSport;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
     public String getSurname() {
         return surname;
     }
