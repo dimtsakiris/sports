@@ -47,11 +47,11 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager = getSupportFragmentManager();
 
 
-        if(findViewById(R.id.sports)!=null){
+        if(findViewById(R.id.fragment_container)!=null){
             if(savedInstanceState!=null){
                 return;
             }
-            fragmentManager.beginTransaction().add(R.id.sports, new SportFragment()).commit();
+            fragmentManager.beginTransaction().add(R.id.fragment_container, new SportFragment()).commit();
         }
 
     }
