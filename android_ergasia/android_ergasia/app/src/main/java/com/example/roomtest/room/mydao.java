@@ -23,6 +23,10 @@ public interface mydao {
 
     @Query("SELECT * FROM athlete")
     List<Athlete> findAllAthletes();
+    @Query("SELECT * FROM sport")
+    List<Sport> findAllSports();
+    @Query("SELECT * FROM team")
+    List<Team> findAllTeams();
 
     @Insert
     void insert_omada(Team Team);

@@ -25,14 +25,14 @@ public class insert_athlete extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.insert_athlete, container, false);
-        id_athlete = view.findViewById(R.id.Code_Athlete);
-        name_athlete = view.findViewById(R.id.Name_Athlete);
-        surname_athlete = view.findViewById(R.id.Sur_Athlete);
-        country_athlete = view.findViewById(R.id.Country_Athlete);
-        city_athlete = view.findViewById(R.id.City_Athlete);
-        bday_athlete = view.findViewById(R.id.Bday);
+        id_athlete = view.findViewById(R.id.Code_Team);
+        name_athlete = view.findViewById(R.id.Name_Team);
+        surname_athlete = view.findViewById(R.id.Stadium_Name);
+        country_athlete = view.findViewById(R.id.Country_Team);
+        city_athlete = view.findViewById(R.id.City_Stadium);
+        bday_athlete = view.findViewById(R.id.Establishment);
         id_sport = view.findViewById(R.id.Code_Sport);
-        button= view.findViewById(R.id.insert_athlete_button);
+        button= view.findViewById(R.id.insert_team_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,11 +64,18 @@ public class insert_athlete extends Fragment {
 
 
                 try {
-                    Athlete athletes= new Athlete(Var_athleteId,Var_athleteSid,Var_athletename,Var_athleteLname,Var_athleteCity,Var_athleteCountry,Var_athleteBday);
+                    Athlete athletes= new Athlete();
+                    athletes.setId(Var_athleteId);
+                    athletes.setIdSport(Var_athleteSid);
+                    athletes.setName(Var_athletename);
+                    athletes.setSurname(Var_athleteLname);
+                    athletes.setCity(Var_athleteCity);
+                    athletes.setCountry(Var_athleteCountry);
+                    athletes.setBirthday(Var_athleteBday);
 
                     MainActivity.myDatabase.mydaotemp().insertAthlete(athletes);
 
-                    Toast.makeText(getActivity(), "Record added.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Athlete added.", Toast.LENGTH_LONG).show();
                 } catch (Exception e) {
                     String message = e.getMessage();
                     Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();

@@ -30,9 +30,9 @@ public class Team {
     private String country;
 
     @ColumnInfo(name="establishment")
-    private String establishment;
+    private int establishment;
 
-    public Team(int id, int idSport, String name, String stadium, String city, String country, String establishment) {
+    /*public Team(int id, int idSport, String name, String stadium, String city, String country, int establishment) {
         this.id = id;
         this.idSport = idSport;
         this.name = name;
@@ -40,7 +40,7 @@ public class Team {
         this.city = city;
         this.country = country;
         this.establishment = establishment;
-    }
+    }*/
 
     public int getId() {
         return id;
@@ -64,8 +64,36 @@ public class Team {
         return country;
     }
     
-    public String getEstablishment() {
+    public int getEstablishment() {
         return establishment;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setIdSport(int idSport) {
+        this.idSport = idSport;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setStadium(String stadium) {
+        this.stadium = stadium;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public void setEstablishment(int establishment) {
+        this.establishment = establishment;
     }
 
     @Override

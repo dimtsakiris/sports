@@ -11,4 +11,17 @@
     <string name="menu_sport">Sport</string>//gallery
     <string name="menu_athletes">Athletes</string>//slideshow
     <string name="menu_teams">Teams</string>
+    <string-array name="query_array">
+        <item> query 1</item>
+        <item> query 2</item>
+        <item> query 3</item>
+
+
+    </string-array>
+    <string-array name="queries_description_array">
+        <item> 1. Εμφανίστε τον πίνακα Aθλητές.</item>
+        <item> 2. Εμφανίστε τον πίνακα Άθλημα.</item>
+        <item> 3. Εμφανίστε τον πίνακα Ομάδες.</item>
+
+    </string-array>
 </resources>

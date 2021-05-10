@@ -51,7 +51,7 @@ public class SportFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.insert_sport:
-            MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container,new insert_sport_fragment()).addToBackStack(null).commit();
+            MainActivity.fragmentManager.beginTransaction().replace(R.id.container,new insert_sport_fragment()).addToBackStack(null).commit();
             break;
 
         }

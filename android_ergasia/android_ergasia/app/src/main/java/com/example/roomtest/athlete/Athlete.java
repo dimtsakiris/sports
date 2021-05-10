@@ -34,7 +34,7 @@ public class Athlete {
     @ColumnInfo(name = "birthday")
     private String birthday;
 
-    public Athlete(int id, int idSport, String name, String surname, String city, String country, String birthday) {
+    /*public Athlete(int id, int idSport, String name, String surname, String city, String country, String birthday) {
         this.id = id;
         this.idSport = idSport;
         this.name = name;
@@ -42,7 +42,7 @@ public class Athlete {
         this.city = city;
         this.country = country;
         this.birthday = birthday;
-    }
+    }*/
 
     public int getId() {
         return id;

@@ -13,18 +13,18 @@ import com.example.roomtest.R;
 
 import androidx.fragment.app.Fragment;
 
-public class insert_sport_fragment extends Fragment  {
-EditText c_sport,n_sport,k_sport,g_sport;
-Button btn;
+public class update_sport extends Fragment  {
+    EditText c_sport,n_sport,k_sport,g_sport;
+    Button btn;
 
-    public insert_sport_fragment(){
+    public update_sport(){
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.insert_sport, container, false);
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.update_sport, container, false);
         c_sport=view.findViewById(R.id.Code_Sport);
         n_sport=view.findViewById(R.id.sport_name);
         k_sport=view.findViewById(R.id.sport_kind);
@@ -51,9 +51,9 @@ Button btn;
                     sport.setName(Sport_Name);
                     sport.setKind(Sport_Kind);
                     sport.setGender(Gender_Sport);
-                    MainActivity.myDatabase.mydaotemp().insertSport(sport);
+                    MainActivity.myDatabase.mydaotemp().update_athlhma(sport);
 
-                    Toast.makeText(getActivity(), "Sport added.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Sport updated.", Toast.LENGTH_LONG).show();
 
                 } catch (Exception e) {
                     String message = e.getMessage();
@@ -73,6 +73,7 @@ Button btn;
 
 
 }
+
 
 
 
