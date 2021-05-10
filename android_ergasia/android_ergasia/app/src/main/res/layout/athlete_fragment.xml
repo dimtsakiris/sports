@@ -23,17 +23,41 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="102dp"
-        android:layout_marginStart="122dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginStart="118dp"
         android:layout_marginTop="40dp"
         android:text="Athlete"
         android:textAlignment="center"
-        android:textSize="40sp"
+        android:textSize="40dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/update_athlete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="136dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="30dp"
+        android:text="Update Athlete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/insert_athlete" />
+
+    <Button
+        android:id="@+id/delete_athlete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="136dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="30dp"
+        android:text="Delete Athlete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/update_athlete" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

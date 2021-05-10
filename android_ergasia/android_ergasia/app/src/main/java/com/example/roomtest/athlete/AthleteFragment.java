@@ -11,11 +11,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.roomtest.R;
 
 public class AthleteFragment extends Fragment {
 
+Button insertA,updateA,deleteA;
     private AthleteViewModel mViewModel;
 
     public static AthleteFragment newInstance() {

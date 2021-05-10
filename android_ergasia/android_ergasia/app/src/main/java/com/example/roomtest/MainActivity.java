@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
 import androidx.room.Room;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -11,11 +12,12 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.navigation.NavController;
 
 import com.example.roomtest.room.MyDatabase;
+import com.example.roomtest.sport.SportFragment;
 import com.google.android.material.navigation.NavigationView;
 
 
 public class MainActivity extends AppCompatActivity {
-
+    public static FragmentManager fragmentManager;
     public static MyDatabase myDatabase;
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -42,6 +44,15 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        fragmentManager = getSupportFragmentManager();
+
+
+        if(findViewById(R.id.sports)!=null){
+            if(savedInstanceState!=null){
+                return;
+            }
+            fragmentManager.beginTransaction().add(R.id.sports, new SportFragment()).commit();
+        }
 
     }
 
