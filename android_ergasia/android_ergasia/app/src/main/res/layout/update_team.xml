@@ -194,14 +194,14 @@
         android:layout_marginStart="118dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="136dp"
-        android:text="Insert Team"
+        android:text="Update Team"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/insert_team_button"
+        android:id="@+id/update_team_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="136dp"

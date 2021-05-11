@@ -25,7 +25,7 @@ public class update_sport extends Fragment  {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.update_sport, container, false);
-        c_sport=view.findViewById(R.id.Code_Sport);
+        c_sport=view.findViewById(R.id.code_sport);
         n_sport=view.findViewById(R.id.sport_name);
         k_sport=view.findViewById(R.id.sport_kind);
         g_sport=view.findViewById(R.id.sport_gender);

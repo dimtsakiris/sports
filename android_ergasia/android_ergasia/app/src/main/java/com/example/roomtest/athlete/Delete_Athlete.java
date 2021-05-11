@@ -34,7 +34,7 @@ public class Delete_Athlete extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.delete_athlete, container, false);
-        editText = view.findViewById(R.id.DCode_Athlete);
+        editText = view.findViewById(R.id.DCode_Team);
         button = view.findViewById(R.id.delete_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
