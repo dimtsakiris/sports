@@ -1,26 +1,23 @@
 package com.example.roomtest.sport;
 
-import androidx.fragment.app.FragmentManager;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.roomtest.MainActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+
 import com.example.roomtest.R;
 
 public class SportFragment extends Fragment implements View.OnClickListener {
 
-    Button Bn_insert, Bn_update, Bn_delete ;
+    Button Bn_insert, Bn_update, Bn_delete;
     private SportViewModel mViewModel;
 
     public static SportFragment newInstance() {
@@ -30,6 +27,7 @@ public class SportFragment extends Fragment implements View.OnClickListener {
     public SportFragment() {
         // Required empty public constructor
     }
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -46,24 +44,15 @@ public class SportFragment extends Fragment implements View.OnClickListener {
     }
 
 
-
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.insert_sport:
-            MainActivity.fragmentManager.beginTransaction().replace(R.id.container,new insert_sport_fragment()).addToBackStack(null).commit();
-            break;
-
+                NavController navController = Navigation.findNavController(v);
+                navController.navigate(R.id.nav_insert_sport);
+                break;
         }
     }
-
-
-
-
-
-
-
-
 
 
     @Override

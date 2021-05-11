@@ -15,16 +15,27 @@
         android:id="@+id/nav_sport"
         android:name="com.example.roomtest.sport.SportFragment"
         android:label="@string/menu_sport"
-        tools:layout="@layout/sport_fragment" />
+        tools:layout="@layout/sport_fragment" >
+        <action
+            android:id="@+id/action_nav_sport_to_insert_sport"
+            app:destination="@id/insert_sport" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_athletes"
         android:name="com.example.roomtest.athlete.AthleteFragment"
         android:label="@string/menu_athletes"
         tools:layout="@layout/athlete_fragment" />
+
     <fragment
         android:id="@+id/nav_teams"
         android:name="com.example.roomtest.team.TeamFragment"
         android:label="@string/menu_teams"
         tools:layout="@layout/team_fragment" />
+
+    <fragment
+        android:id="@+id/nav_insert_sport"
+        android:name="com.example.roomtest.sport.insert_sport_fragment"
+        android:label="@string/menu_sport"
+        tools:layout="@layout/insert_sport" />
 </navigation>

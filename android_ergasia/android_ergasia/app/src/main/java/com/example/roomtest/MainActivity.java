@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             if(savedInstanceState!=null){
                 return;
             }
-            fragmentManager.beginTransaction().add(R.id.container, new SportFragment()).commit();
+//            fragmentManager.beginTransaction().add(R.id.container, new SportFragment()).commit();
         }
 
     }
