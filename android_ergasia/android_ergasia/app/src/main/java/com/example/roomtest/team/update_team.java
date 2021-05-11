@@ -32,7 +32,7 @@ public class update_team extends Fragment {
         Country = view.findViewById(R.id.Country_Team);
         KwdikosAth = view.findViewById(R.id.Code_Sport);
         Date = view.findViewById(R.id.Establishment);
-        sibn = view.findViewById(R.id.insert_team);
+        sibn = view.findViewById(R.id.update_team_button);
         sibn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
