@@ -76,7 +76,7 @@ public class Fragment_Query extends Fragment {
                             String Date=i.getBirthday();
 
 
-                            result = result + "\n Id: " + code + "\n Name: " + name + "\n Last name"+Lname+"\n Country"+Country+"\nCity"+City+"\nSport ID"+sid+"\nBirthday"+Date+"\n";
+                            result = result + "\n Id: " + code + "\n Name: " + name + "\n Last name : " + Lname + "\n Country : " + Country + "\n City : " + City + "\n Sport ID : "+sid+"\n Birthday : "+Date+"\n";
                         }
                         querytextresult.setText(result);
                         break;
