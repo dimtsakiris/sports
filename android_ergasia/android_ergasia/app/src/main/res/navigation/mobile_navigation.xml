@@ -10,6 +10,13 @@
         android:name="com.example.roomtest.matches.MatchesFragment"
         android:label="@string/menu_matches"
         tools:layout="@layout/matches_fragment" />
+    <fragment
+        android:id="@+id/nav_query"
+        android:name="com.example.roomtest.matches.FragmentQuery"
+        android:label="@string/menu_matches"
+        tools:layout="@layout/fragment_query" />
+
+
 
     <fragment
         android:id="@+id/nav_sport"
