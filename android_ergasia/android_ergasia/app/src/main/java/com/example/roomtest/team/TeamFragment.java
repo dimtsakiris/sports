@@ -29,11 +29,11 @@ public class TeamFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.team_fragment, container, false);
-        insertT = view.findViewById(R.id.insert_sport);
+        insertT = view.findViewById(R.id.insert_team);
         insertT.setOnClickListener(this);
-        updateT = view.findViewById(R.id.delete_sport);
+        updateT = view.findViewById(R.id.update_team);
         updateT.setOnClickListener(this);
-        deleteT = view.findViewById(R.id.updatesport);
+        deleteT = view.findViewById(R.id.delete_team);
         deleteT.setOnClickListener(this);
 
         return view;
