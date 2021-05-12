@@ -38,4 +38,48 @@
         android:name="com.example.roomtest.sport.insert_sport_fragment"
         android:label="@string/menu_sport"
         tools:layout="@layout/insert_sport" />
+    <fragment
+        android:id="@+id/nav_update_sport"
+        android:name="com.example.roomtest.sport.update_sport"
+        android:label="@string/menu_sport"
+        tools:layout="@layout/update_sport" />
+    <fragment
+        android:id="@+id/nav_delete_sport"
+        android:name="com.example.roomtest.sport.delete_sport"
+        android:label="@string/menu_sport"
+        tools:layout="@layout/delete_sport" />
+    <fragment
+        android:id="@+id/nav_insert_athlete"
+        android:name="com.example.roomtest.athlete.insert_athlete"
+        android:label="@string/menu_athletes"
+        tools:layout="@layout/insert_athlete" />
+
+    <fragment
+        android:id="@+id/nav_update_athlete"
+        android:name="com.example.roomtest.athlete.Update_Athlete"
+        android:label="@string/menu_athletes"
+        tools:layout="@layout/update_athlete" />
+    <fragment
+        android:id="@+id/nav_delete_athlete"
+        android:name="com.example.roomtest.athlete.Delete_Athlete"
+        android:label="@string/menu_athletes"
+        tools:layout="@layout/delete_athlete" />
+    <fragment
+        android:id="@+id/nav_insert_team"
+        android:name="com.example.roomtest.team.insert_team"
+        android:label="@string/menu_teams"
+        tools:layout="@layout/insert_team" />
+    <fragment
+        android:id="@+id/nav_update_team"
+        android:name="com.example.roomtest.team.update_team"
+        android:label="@string/menu_teams"
+        tools:layout="@layout/update_team" />
+    <fragment
+        android:id="@+id/nav_delete_team"
+        android:name="com.example.roomtest.team.delete_team"
+        android:label="@string/menu_teams"
+        tools:layout="@layout/delete_team" />
+
+
+
 </navigation>

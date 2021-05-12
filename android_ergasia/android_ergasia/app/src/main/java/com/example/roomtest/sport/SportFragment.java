@@ -51,6 +51,14 @@ public class SportFragment extends Fragment implements View.OnClickListener {
                 NavController navController = Navigation.findNavController(v);
                 navController.navigate(R.id.nav_insert_sport);
                 break;
+            case R.id.updatesport:
+                NavController navController2 = Navigation.findNavController(v);
+                navController2.navigate(R.id.nav_update_sport);
+                break;
+            case R.id.delete_sport:
+                NavController navController3 = Navigation.findNavController(v);
+                navController3.navigate(R.id.nav_delete_sport);
+                break;
         }
     }
 
