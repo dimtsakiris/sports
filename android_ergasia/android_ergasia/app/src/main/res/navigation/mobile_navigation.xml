@@ -15,6 +15,11 @@
         android:name="com.example.roomtest.matches.FragmentQuery"
         android:label="@string/menu_matches"
         tools:layout="@layout/fragment_query" />
+    <fragment
+        android:id="@+id/nav_team_matches"
+        android:name="com.example.roomtest.matches.InsertMatches"
+        android:label="@string/menu_matches"
+        tools:layout="@layout/team_match" />
 
 
 

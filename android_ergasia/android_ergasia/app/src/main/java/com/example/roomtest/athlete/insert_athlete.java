@@ -88,8 +88,11 @@ public class insert_athlete extends Fragment {
                     // Create a new user with a first and last name
 
 
+                    db.collection("athlete").document(""+Var_athleteId).set(athletes).
+                            addOnCompleteListener((task)-> {Toast.makeText(getActivity(),"Added Record",Toast.LENGTH_LONG).show();})
+                            .addOnFailureListener((e)->{Toast.makeText(getActivity(),"Fail",Toast.LENGTH_LONG).show();});
 // Add a new document with a generated ID
-                    Log.d("hfhf", "DocumentSnapshot added with ID: blblb " );
+                   /* Log.d("hfhf", "DocumentSnapshot added with ID: blblb " );
                     db.collection("athlete")
                             .add(athletes)
                             .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
@@ -103,7 +106,7 @@ public class insert_athlete extends Fragment {
                                 public void onFailure(@NonNull Exception e) {
                                     Log.w("fjj", "Error adding document", e);
                                 }
-                            });
+                            }); */
                 } catch (Exception e) {
                     String message = e.getMessage();
                     Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();

@@ -93,10 +93,11 @@ public class insert_team extends Fragment {
 
                     // Create a new user with a first and last name
 
-
-// Add a new document with a generated ID
-                    Log.d("hfhf", "DocumentSnapshot added with ID: blblb " );
-                    db.collection("team")
+                    db.collection("team").document(""+Var_teamId).set(team).
+                            addOnCompleteListener((task)-> {Toast.makeText(getActivity(),"Added Record",Toast.LENGTH_LONG).show();})
+                            .addOnFailureListener((e)->{Toast.makeText(getActivity(),"Fail",Toast.LENGTH_LONG).show();});
+// Add a new document with a generated IDLog.d("hfhf", "DocumentSnapshot added with ID: blblb " );
+                 /*   db.collection("team")
                             .add(team)
                             .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                 @Override
@@ -109,7 +110,7 @@ public class insert_team extends Fragment {
                                 public void onFailure(@NonNull Exception e) {
                                     Log.w("fjj", "Error adding document", e);
                                 }
-                            });
+                            }); */
                 } catch (Exception e) {
                     String message = e.getMessage();
                     Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();

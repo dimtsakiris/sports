@@ -69,10 +69,12 @@ Button btn;
 
                     // Create a new user with a first and last name
 
-
+                        db.collection("sports").document(""+Team_code).set(sport).
+                                addOnCompleteListener((task)-> {Toast.makeText(getActivity(),"Added Record",Toast.LENGTH_LONG).show();})
+                                .addOnFailureListener((e)->{Toast.makeText(getActivity(),"Fail",Toast.LENGTH_LONG).show();});
 // Add a new document with a generated ID
-                    Log.d("hfhf", "DocumentSnapshot added with ID: blblb " );
-                    db.collection("sports")
+
+                   /* db.collection("sports")
                             .add(sport)
                             .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                 @Override
@@ -85,7 +87,7 @@ Button btn;
                                 public void onFailure(@NonNull Exception e) {
                                     Log.w("fjj", "Error adding document", e);
                                 }
-                            });
+                            });*/
 
                 } catch (Exception e) {
                     String message = e.getMessage();
