@@ -1,6 +1,7 @@
 package com.example.roomtest.sport;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,16 +11,26 @@ import android.widget.Toast;
 
 import com.example.roomtest.MainActivity;
 import com.example.roomtest.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class insert_sport_fragment extends Fragment  {
 EditText c_sport,n_sport,k_sport,g_sport;
 Button btn;
-
+    public static FirebaseFirestore db;
     public insert_sport_fragment(){
 
+
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -54,10 +65,32 @@ Button btn;
                     MainActivity.myDatabase.mydaotemp().insertSport(sport);
 
                     Toast.makeText(getActivity(), "Sport added.", Toast.LENGTH_LONG).show();
+                    db = FirebaseFirestore.getInstance();
+
+                    // Create a new user with a first and last name
+
+
+// Add a new document with a generated ID
+                    Log.d("hfhf", "DocumentSnapshot added with ID: blblb " );
+                    db.collection("sports")
+                            .add(sport)
+                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                @Override
+                                public void onSuccess(DocumentReference documentReference) {
+                                    Log.d("hfhf", "DocumentSnapshot added with ID: " + documentReference.getId());
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w("fjj", "Error adding document", e);
+                                }
+                            });
 
                 } catch (Exception e) {
                     String message = e.getMessage();
                     Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
+
                 }
                 c_sport.setText("");
                 n_sport.setText("");

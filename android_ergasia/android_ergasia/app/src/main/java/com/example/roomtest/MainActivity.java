@@ -29,37 +29,14 @@ public class MainActivity extends AppCompatActivity {
     public static FragmentManager fragmentManager;
     public static MyDatabase myDatabase;
     private AppBarConfiguration mAppBarConfiguration;
-    public static FirebaseFirestore db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        db = FirebaseFirestore.getInstance();
 
-        // Create a new user with a first and last name
-        Map<String, Object> user = new HashMap<>();
-        user.put("first", "Ada");
-        user.put("last", "Lovelace");
-        user.put("born", 1815);
-
-// Add a new document with a generated ID
-        Log.d("hfhf", "DocumentSnapshot added with ID: blblb " );
-        db.collection("users")
-                .add(user)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d("hfhf", "DocumentSnapshot added with ID: " + documentReference.getId());
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w("fjj", "Error adding document", e);
-                    }
-                });
         myDatabase = Room.databaseBuilder(getApplicationContext(), MyDatabase.class, "userBd").allowMainThreadQueries().build();
 //        myDatabase.mydaotemp().insertSport(new Sport(1, "Football", "Team", "Male"));
 //        myDatabase.mydaotemp().insertAthlete(new Athlete(1, 1, "tets", "tets", "tets", "tets", "tets"));
