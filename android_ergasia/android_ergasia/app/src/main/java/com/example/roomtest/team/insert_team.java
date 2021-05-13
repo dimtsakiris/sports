@@ -96,7 +96,7 @@ public class insert_team extends Fragment {
 
 // Add a new document with a generated ID
                     Log.d("hfhf", "DocumentSnapshot added with ID: blblb " );
-                    db.collection("sports")
+                    db.collection("team")
                             .add(team)
                             .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                 @Override
