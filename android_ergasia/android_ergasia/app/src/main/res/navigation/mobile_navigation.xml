@@ -11,6 +11,11 @@
         android:label="@string/menu_matches"
         tools:layout="@layout/matches_fragment" />
     <fragment
+        android:id="@+id/nav_javelin"
+        android:name="com.example.roomtest.matches.InsertJavelin"
+        android:label="@string/menu_matches"
+        tools:layout="@layout/javelin" />
+    <fragment
         android:id="@+id/nav_tennis"
         android:name="com.example.roomtest.matches.InsertTennis"
         android:label="@string/menu_matches"

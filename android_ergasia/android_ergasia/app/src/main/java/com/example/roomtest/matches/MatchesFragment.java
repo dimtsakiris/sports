@@ -18,7 +18,7 @@ import android.widget.Button;
 import com.example.roomtest.R;
 
 public class MatchesFragment extends Fragment implements View.OnClickListener {
-Button query,teams,tennis;
+Button query,teams,tennis,javelin;
     private MatchesViewModel mViewModel;
 
     public static MatchesFragment newInstance() {
@@ -35,6 +35,8 @@ Button query,teams,tennis;
         teams.setOnClickListener(this);
         tennis=view.findViewById(R.id.buttonTennis);
         tennis.setOnClickListener(this);
+        javelin=view.findViewById(R.id.javelin_button);
+        javelin.setOnClickListener(this);
         return view;
     }
 
@@ -53,6 +55,10 @@ Button query,teams,tennis;
             NavController navController3 = Navigation.findNavController(v);
             navController3.navigate(R.id.nav_tennis);
             break;
+            case  R.id.javelin_button:
+                NavController navController4 = Navigation.findNavController(v);
+                navController4.navigate(R.id.nav_javelin);
+                break;
 
         }
     }
