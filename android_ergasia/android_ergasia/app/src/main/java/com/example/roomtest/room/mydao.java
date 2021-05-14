@@ -21,6 +21,9 @@ public interface mydao {
     @Insert
     void insertAthlete(Athlete athlete);
 
+    @Query("SELECT * FROM team where id= :id")
+    Team findTeamById(Integer id);
+
     @Query("SELECT * FROM sport WHERE id = :id")
     Sport findSportById(Integer id);
 

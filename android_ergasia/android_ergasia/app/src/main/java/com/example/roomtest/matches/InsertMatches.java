@@ -58,10 +58,13 @@ public static FirebaseFirestore db;
                 String countryString=country.getText().toString();
 
                 Sport sport = MainActivity.myDatabase.mydaotemp().findSportById(codesport);
+                Team team=MainActivity.myDatabase.mydaotemp().findTeamById(Var_teamId);
+                Team team2=MainActivity.myDatabase.mydaotemp().findTeamById(tid2);
+                
 
 
                 try{
-                    TeamMatch teamMatch = new TeamMatch(dateString,cityString,countryString,sport,null,null,s1,s2);
+                    TeamMatch teamMatch = new TeamMatch(dateString,cityString,countryString,sport,null,null,s1,s2,team,team2);
                     db.collection("match").document("" +name1 +name2).set(teamMatch).addOnCompleteListener((task)-> {
                         Toast.makeText(getActivity(),"Added Record",Toast.LENGTH_LONG).show();})
                             .addOnFailureListener((e)->{Toast.makeText(getActivity(),"Fail",Toast.LENGTH_LONG).show();});
