@@ -63,7 +63,7 @@ public class InsertJavelin extends Fragment {
                 db = FirebaseFirestore.getInstance();
                 try{
                     Javelin tennis = new Javelin(dateString,cityString,countryString,sport,athlete,athlete2,m1,m2,athlete,athlete2);
-                    db.collection("tennis").document("" +athlete.getName() +athlete2.getName()).set(tennis).addOnCompleteListener((task)-> {
+                    db.collection("javelin").document("" +athlete.getName() +athlete2.getName()).set(tennis).addOnCompleteListener((task)-> {
                         Toast.makeText(getActivity(),"Added Record",Toast.LENGTH_LONG).show();})
                             .addOnFailureListener((e)->{Toast.makeText(getActivity(),"Fail",Toast.LENGTH_LONG).show();});
 
