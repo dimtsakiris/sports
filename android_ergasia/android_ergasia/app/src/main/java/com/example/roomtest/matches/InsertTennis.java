@@ -8,30 +8,31 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+
 import com.example.roomtest.MainActivity;
 import com.example.roomtest.R;
+import com.example.roomtest.athlete.Athlete;
 import com.example.roomtest.sport.Sport;
 import com.example.roomtest.team.Team;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import androidx.fragment.app.Fragment;
 
-public class InsertMatches extends Fragment {
-EditText csport,tname1,cteam1,score1,tname2,cteam2,score2,date,city,country;
-Button btn;
+public class InsertTennis extends Fragment {
+    EditText codeSport,athleteName1,codeAthlete1,score1,athleteName2,codeAthlete2,score2,date,city,country;
+    Button btn;
 
-public static FirebaseFirestore db;
+    public static FirebaseFirestore db;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.team_match,container,false);
-        csport=view.findViewById(R.id.CodeMatchSport);
-        tname1=view.findViewById(R.id.AthleteName1);
-        cteam1=view.findViewById(R.id.CodeAthlete1);
+        View view = inflater.inflate(R.layout.tenis,container,false);
+        codeSport=view.findViewById(R.id.CodeMatchSport);
+        athleteName1=view.findViewById(R.id.AthleteName1);
+        codeAthlete1=view.findViewById(R.id.CodeAthlete1);
         score1=view.findViewById(R.id.Score1);
-        tname2=view.findViewById(R.id.AthleteName2);
-        cteam2=view.findViewById(R.id.CodeAthlete2);
+        athleteName2=view.findViewById(R.id.AthleteName2);
+        codeAthlete2=view.findViewById(R.id.CodeAthlete2);
         score2=view.findViewById(R.id.Score2);
         date=view.findViewById(R.id.DateMatch);
         city=view.findViewById(R.id.CityMatch);
@@ -40,31 +41,31 @@ public static FirebaseFirestore db;
         btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                int teamId= 0;
+                int athleteId= 0;
                 try {
-                    teamId = Integer.parseInt(cteam1.getText().toString());
+                    athleteId = Integer.parseInt(codeAthlete1.getText().toString());
                 } catch (NumberFormatException ex) {
                     System.out.println("Could not parse " + ex);
                 }
-                int codesport=Integer.parseInt(csport.getText().toString());
-                String name1=tname1.getText().toString();
+                int codesport=Integer.parseInt(codeSport.getText().toString());
+                String name1=athleteName1.getText().toString();
                 int s1=Integer.parseInt(score1.getText().toString());
-                String name2=tname2.getText().toString();
-                int tid2=Integer.parseInt(cteam2.getText().toString());
+                String name2=athleteName2.getText().toString();
+                int aid2=Integer.parseInt(codeAthlete2.getText().toString());
                 int s2=Integer.parseInt(score2.getText().toString());
                 String dateString=date.getText().toString();
                 String cityString=city.getText().toString();
                 String countryString=country.getText().toString();
 
                 Sport sport = MainActivity.myDatabase.mydaotemp().findSportById(codesport);
-                Team team=MainActivity.myDatabase.mydaotemp().findTeamById(teamId);
-                Team team2=MainActivity.myDatabase.mydaotemp().findTeamById(tid2);
+                Athlete athlete=MainActivity.myDatabase.mydaotemp().findAthleteById(athleteId);
+                Athlete athlete2=MainActivity.myDatabase.mydaotemp().findAthleteById(aid2);
 
 
                 db = FirebaseFirestore.getInstance();
                 try{
-                    TeamMatch teamMatch = new TeamMatch(dateString,cityString,countryString,sport,team,team2,s1,s2,team,team2);
-                    db.collection("match").document("" +team.getName() +team2.getName()).set(teamMatch).addOnCompleteListener((task)-> {
+                    Tennis tennis = new Tennis(dateString,cityString,countryString,sport,athlete,athlete2,s1,s2,athlete,athlete2);
+                    db.collection("tennis").document("" +athlete.getName() +athlete2.getName()).set(tennis).addOnCompleteListener((task)-> {
                         Toast.makeText(getActivity(),"Added Record",Toast.LENGTH_LONG).show();})
                             .addOnFailureListener((e)->{Toast.makeText(getActivity(),"Fail",Toast.LENGTH_LONG).show();});
 
@@ -74,12 +75,12 @@ public static FirebaseFirestore db;
                     Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
                 }
 
-                csport.setText("");
-                tname1.setText("");
-                cteam1.setText("");
+                codeSport.setText("");
+                athleteName1.setText("");
+                codeAthlete1.setText("");
                 score1.setText("");
-                tname2.setText("");
-                cteam2.setText("");
+                athleteName2.setText("");
+                codeAthlete2.setText("");
                 score2.setText("");
                 date.setText("");
                 city.setText("");
@@ -89,8 +90,11 @@ public static FirebaseFirestore db;
             }
 
         });
+
         return view;
 
-     }
     }
 
+
+
+}

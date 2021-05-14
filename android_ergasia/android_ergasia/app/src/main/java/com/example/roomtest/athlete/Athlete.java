@@ -7,7 +7,7 @@ import androidx.room.ForeignKey;
 
 import com.example.roomtest.sport.Sport;
 
-@Entity(tableName = "athlete", primaryKeys = {"id", "id_sport"},
+@Entity(tableName = "athlete", primaryKeys = {"id","id_sport"},
         foreignKeys = {@ForeignKey(entity = Sport.class, parentColumns = "id", childColumns = "id_sport", onDelete = ForeignKey.CASCADE, onUpdate = ForeignKey.CASCADE)})
 public class Athlete {
 
