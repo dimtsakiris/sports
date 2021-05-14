@@ -8,10 +8,10 @@ import androidx.room.ForeignKey;
 
 import com.example.roomtest.sport.Sport;
 
-@Entity(tableName = "team",primaryKeys = {"id_team","id_sport"},
+@Entity(tableName = "team",primaryKeys = {"id","id_sport"},
         foreignKeys = {@ForeignKey(entity = Sport.class,parentColumns = "id",childColumns = "id_sport",onDelete = ForeignKey.CASCADE,onUpdate = ForeignKey.CASCADE)})
 public class Team {
-    @ColumnInfo(name="id_team")@NonNull
+    @ColumnInfo(name="id")@NonNull
     private int id;
 
     @ColumnInfo(name="id_sport") @NonNull

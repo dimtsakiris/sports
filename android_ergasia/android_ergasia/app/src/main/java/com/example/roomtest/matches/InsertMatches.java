@@ -41,9 +41,9 @@ public static FirebaseFirestore db;
         btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                int Var_teamId= 0;
+                int teamId= 0;
                 try {
-                    Var_teamId = Integer.parseInt(cteam1.getText().toString());
+                    teamId = Integer.parseInt(cteam1.getText().toString());
                 } catch (NumberFormatException ex) {
                     System.out.println("Could not parse " + ex);
                 }
@@ -58,14 +58,14 @@ public static FirebaseFirestore db;
                 String countryString=country.getText().toString();
 
                 Sport sport = MainActivity.myDatabase.mydaotemp().findSportById(codesport);
-                Team team=MainActivity.myDatabase.mydaotemp().findTeamById(Var_teamId);
+                Team team=MainActivity.myDatabase.mydaotemp().findTeamById(teamId);
                 Team team2=MainActivity.myDatabase.mydaotemp().findTeamById(tid2);
-                
 
 
+                db = FirebaseFirestore.getInstance();
                 try{
-                    TeamMatch teamMatch = new TeamMatch(dateString,cityString,countryString,sport,null,null,s1,s2,team,team2);
-                    db.collection("match").document("" +name1 +name2).set(teamMatch).addOnCompleteListener((task)-> {
+                    TeamMatch teamMatch = new TeamMatch(dateString,cityString,countryString,sport,team,team2,s1,s2,team,team2);
+                    db.collection("match").document("" +team.getName() +team2.getName()).set(teamMatch).addOnCompleteListener((task)-> {
                         Toast.makeText(getActivity(),"Added Record",Toast.LENGTH_LONG).show();})
                             .addOnFailureListener((e)->{Toast.makeText(getActivity(),"Fail",Toast.LENGTH_LONG).show();});
 
