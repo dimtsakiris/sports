@@ -15,6 +15,9 @@
         <item> query 1</item>
         <item> query 2</item>
         <item> query 3</item>
+        <item> query 4</item>
+        <item> query 5</item>
+        <item> query 6</item>
 
 
     </string-array>
@@ -22,6 +25,8 @@
         <item> 1. Εμφανίστε τον πίνακα Aθλητές.</item>
         <item> 2. Εμφανίστε τον πίνακα Άθλημα.</item>
         <item> 3. Εμφανίστε τον πίνακα Ομάδες.</item>
-
+        <item> 4. Αποτελέσματα Αγώνων. </item>
+        <item> 5. Αποτελέσματα Τένις. </item>
+        <item> 6. Αποτελέσματα Ακόντιο. </item>
     </string-array>
 </resources>
