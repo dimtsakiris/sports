@@ -32,34 +32,6 @@ public class Team {
     @ColumnInfo(name="establishment")
     private int establishment;
 
-    /*public Team(int id, int idSport, String name, String stadium, String city, String country, int establishment) {
-        this.id = id;
-        this.idSport = idSport;
-        this.name = name;
-        this.stadium = stadium;
-        this.city = city;
-        this.country = country;
-        this.establishment = establishment;
-    }*/
- private  int score1;
- private int score2;
-
-    public void setScore1(int score1) {
-        this.score1 = score1;
-    }
-
-    public void setScore2(int score2) {
-        this.score2 = score2;
-    }
-
-    public int getScore1() {
-        return score1;
-    }
-
-    public int getScore2() {
-        return score2;
-    }
-
     public int getId() {
         return id;
     }

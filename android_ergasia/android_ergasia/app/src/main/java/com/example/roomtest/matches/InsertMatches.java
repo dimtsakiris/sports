@@ -8,7 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.roomtest.MainActivity;
 import com.example.roomtest.R;
+import com.example.roomtest.sport.Sport;
 import com.example.roomtest.team.Team;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -51,25 +53,16 @@ public static FirebaseFirestore db;
                 String name2=tname2.getText().toString();
                 int tid2=Integer.parseInt(cteam2.getText().toString());
                 int s2=Integer.parseInt(score2.getText().toString());
-                int Date=Integer.parseInt(date.getText().toString());
-                String ci=city.getText().toString();
-                String Country=country.getText().toString();
+                String dateString=date.getText().toString();
+                String cityString=city.getText().toString();
+                String countryString=country.getText().toString();
 
+                Sport sport = MainActivity.myDatabase.mydaotemp().findSportById(codesport);
 
 
                 try{
-                   Team team=new Team();
-                   team.setId(codesport);
-                   team.setName(name1);
-                   team.setName(name2);
-                   team.setScore1(s1);
-                   team.setId(tid2);
-                   team.setScore2(s2);
-                   team.setEstablishment(Date);
-                   team.setStadium(ci);
-                   team.setCountry(Country);
-
-                    db.document(""+Var_teamId).set(team).addOnCompleteListener((task)-> {
+                    TeamMatch teamMatch = new TeamMatch(dateString,cityString,countryString,sport,null,null,s1,s2);
+                    db.collection("match").document("" +name1 +name2).set(teamMatch).addOnCompleteListener((task)-> {
                         Toast.makeText(getActivity(),"Added Record",Toast.LENGTH_LONG).show();})
                             .addOnFailureListener((e)->{Toast.makeText(getActivity(),"Fail",Toast.LENGTH_LONG).show();});
 
