@@ -1,6 +1,7 @@
 package com.example.roomtest.matches;
 
 import android.os.Bundle;
+import android.service.autofill.FieldClassification;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,8 @@ import com.example.roomtest.R;
 import com.example.roomtest.athlete.Athlete;
 import com.example.roomtest.sport.Sport;
 import com.example.roomtest.team.Team;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.List;
 
@@ -31,7 +34,7 @@ public class FragmentQuery extends Fragment {
 
         // Required empty public constructor
     }
-
+    public static FirebaseFirestore db;
 
 
     @Override
@@ -107,6 +110,8 @@ public class FragmentQuery extends Fragment {
                         }
                         querytextresult.setText(result);
                         break;
+
+
 
 
                 }

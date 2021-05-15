@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,10 +30,15 @@ public class MainActivity extends AppCompatActivity {
     public static FragmentManager fragmentManager;
     public static MyDatabase myDatabase;
     private AppBarConfiguration mAppBarConfiguration;
+    public static FirebaseFirestore db;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        db = FirebaseFirestore.getInstance();
+        QuerySnapshot match = db.collection("match").get().getResult();
+        match.getQuery();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
