@@ -25,12 +25,12 @@ public class update_team extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.update_team, container, false);
-        KwdOn = view.findViewById(R.id.Code_Team);
+        KwdOn = view.findViewById(R.id.codeSport);
         name = view.findViewById(R.id.Name_Team);
         Stadium = view.findViewById(R.id.Stadium_Name);
         Ccountry = view.findViewById(R.id.City_Stadium);
         Country = view.findViewById(R.id.Country_Team);
-        KwdikosAth = view.findViewById(R.id.Code_Sport);
+        KwdikosAth = view.findViewById(R.id.codeAthlete);
         Date = view.findViewById(R.id.Establishment);
         sibn = view.findViewById(R.id.update_team_button);
         sibn.setOnClickListener(new View.OnClickListener() {

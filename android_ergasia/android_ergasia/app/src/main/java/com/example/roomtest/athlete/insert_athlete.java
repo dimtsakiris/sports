@@ -28,13 +28,13 @@ public class insert_athlete extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.insert_athlete, container, false);
-        id_athlete = view.findViewById(R.id.Code_Team);
+        id_athlete = view.findViewById(R.id.codeAthlete);
         name_athlete = view.findViewById(R.id.Name_Team);
         surname_athlete = view.findViewById(R.id.Stadium_Name);
         country_athlete = view.findViewById(R.id.Country_Team);
         city_athlete = view.findViewById(R.id.City_Stadium);
         bday_athlete = view.findViewById(R.id.Establishment);
-        id_sport = view.findViewById(R.id.Code_Sport);
+        id_sport = view.findViewById(R.id.codeSport);
         button = view.findViewById(R.id.update_team_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

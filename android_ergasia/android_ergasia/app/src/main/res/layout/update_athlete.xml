@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/Code_Team"
+        android:id="@+id/codeSport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="21dp"
@@ -27,7 +27,7 @@
         android:layout_marginEnd="21dp"
         android:text="Code Sport"
         android:textSize="20dp"
-        app:layout_constraintEnd_toStartOf="@+id/Code_Team"
+        app:layout_constraintEnd_toStartOf="@+id/codeSport"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
@@ -55,7 +55,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView16"
-        app:layout_constraintTop_toBottomOf="@+id/Code_Team" />
+        app:layout_constraintTop_toBottomOf="@+id/codeSport" />
 
     <TextView
         android:id="@+id/textView17"
@@ -146,12 +146,12 @@
         android:text="Code Athlete"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/textView21"
-        app:layout_constraintEnd_toStartOf="@+id/Code_Sport"
+        app:layout_constraintEnd_toStartOf="@+id/codeAthlete"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <EditText
-        android:id="@+id/Code_Sport"
+        android:id="@+id/codeAthlete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="21dp"
@@ -187,7 +187,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView21"
-        app:layout_constraintTop_toBottomOf="@+id/Code_Sport" />
+        app:layout_constraintTop_toBottomOf="@+id/codeAthlete" />
 
     <TextView
         android:id="@+id/textView22"
