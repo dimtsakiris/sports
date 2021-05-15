@@ -17,12 +17,14 @@ import com.example.roomtest.R;
 import com.example.roomtest.athlete.Athlete;
 import com.example.roomtest.sport.Sport;
 import com.example.roomtest.team.Team;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.Arrays;
 import java.util.List;
 
 import androidx.fragment.app.Fragment;
@@ -121,8 +123,11 @@ public class FragmentQuery extends Fragment {
                                 .addSnapshotListener((EventListener<DocumentSnapshot>) (value, e) -> {
 
                                     TeamMatch teamMatch = value.toObject(TeamMatch.class);
+                                    querytextresult.setText(String.valueOf(teamMatch.getTeamname1().getName())+" - " + " "+String.valueOf(teamMatch.getTeamname2().getName())+"  "+String.valueOf(teamMatch.getScore1()+ "  " + "  " +String.valueOf(teamMatch.getScore2())));
 
-                                    querytextresult.setText(String.valueOf(teamMatch.getScore1()));
+
+
+
 
 
 
