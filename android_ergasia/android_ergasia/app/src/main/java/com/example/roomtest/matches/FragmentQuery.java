@@ -2,6 +2,7 @@ package com.example.roomtest.matches;
 
 import android.os.Bundle;
 import android.service.autofill.FieldClassification;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,10 @@ import com.example.roomtest.R;
 import com.example.roomtest.athlete.Athlete;
 import com.example.roomtest.sport.Sport;
 import com.example.roomtest.team.Team;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.List;
@@ -110,7 +114,25 @@ public class FragmentQuery extends Fragment {
                         }
                         querytextresult.setText(result);
                         break;
+                    case 4:
+                        db = FirebaseFirestore.getInstance();
+                        ListenerRegistration listenerRegistration = db.collection("match").document("paokaek")
 
+                                .addSnapshotListener((EventListener<DocumentSnapshot>) (value, e) -> {
+
+                                    TeamMatch teamMatch = value.toObject(TeamMatch.class);
+
+                                    querytextresult.setText(String.valueOf(teamMatch.getScore1()));
+
+
+
+
+                                });
+
+
+
+
+                        break;
 
 
 

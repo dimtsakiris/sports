@@ -15,7 +15,10 @@ public class TeamMatch {
     private Team teamname1;
     private Team teamname2;
 
-    public TeamMatch(String date, String city, String country, Sport sport, Team team1, Team team2, Integer score1, Integer score2,Team teamname1,Team teamname2) {
+    public TeamMatch() {
+    }
+
+    public TeamMatch(String date, String city, String country, Sport sport, Team team1, Team team2, Integer score1, Integer score2, Team teamname1, Team teamname2) {
         this.date = date;
         this.city = city;
         this.country = country;
