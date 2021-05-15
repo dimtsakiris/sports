@@ -15,6 +15,9 @@ public class Javelin {
     private Athlete athleteName1;
     private Athlete athleteName2;
 
+    public Javelin() {
+    }
+
     public Javelin(String date, String city, String country, Sport sport, Athlete athleteId1, Athlete athleteId2, Integer metre1, Integer metre2, Athlete athleteName1, Athlete athleteName2) {
         this.date = date;
         this.city = city;

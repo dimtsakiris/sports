@@ -151,13 +151,49 @@ public class FragmentQuery extends Fragment {
                                 });
                         break;
                     case 5:
-                        db.collection("tennis").document("dhgi")
+                        db.collection("tennis")
+                                .get()
+                                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                        if (task.isSuccessful()) {
+                                            List<DocumentSnapshot> myListOfDocuments = task.getResult().getDocuments();
+                                            StringBuilder result = new StringBuilder();
+                                            for (DocumentSnapshot documentSnapshot : myListOfDocuments) {
+                                                Tennis tennis = documentSnapshot.toObject(Tennis.class);
+                                                result.append("\n").append(convertTennisMatchData(tennis));
+                                            }
+                                            querytextresult.setText(result);
+                                        }
+                                    }
+                                });
+                        db.collection("tennis").limit(1000)
 
-                                .addSnapshotListener((EventListener<DocumentSnapshot>) (value, e) -> {
+                                .addSnapshotListener((EventListener<QuerySnapshot>) (value, e) -> {
 
-                                    Tennis tennis = value.toObject(Tennis.class);
 
-                                    querytextresult.setText(String.valueOf(tennis.getScore1() + "  " + "  " + String.valueOf(tennis.getScore2())));
+                                });
+                        break;
+                    case 6:
+                        db.collection("javelin")
+                                .get()
+                                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                        if (task.isSuccessful()) {
+                                            List<DocumentSnapshot> myListOfDocuments = task.getResult().getDocuments();
+                                            StringBuilder result = new StringBuilder();
+                                            for (DocumentSnapshot documentSnapshot : myListOfDocuments) {
+                                                Javelin javelin = documentSnapshot.toObject(Javelin.class);
+                                                result.append("\n").append(convertJavelinMatchData(javelin));
+                                            }
+                                            querytextresult.setText(result);
+                                        }
+                                    }
+                                });
+                        db.collection("tennis").limit(1000)
+
+                                .addSnapshotListener((EventListener<QuerySnapshot>) (value, e) -> {
 
 
                                 });
@@ -169,6 +205,15 @@ public class FragmentQuery extends Fragment {
 
             private String convertTeamMatchData(TeamMatch teamMatch) {
                 return teamMatch.getTeamname1().getName() + " - " + " " + teamMatch.getTeamname2().getName() + "  " + teamMatch.getScore1() + "  " + "  " + teamMatch.getScore2();
+            }
+
+            private String convertTennisMatchData(Tennis tennis){
+                return tennis.getAthleteName1().getName() + " - " + " " + tennis.getAthleteName2().getName() + "  " + tennis.getScore1() + "  " + "  " + tennis.getScore2();
+
+            }
+            private String convertJavelinMatchData(Javelin javelin){
+                return javelin.getAthleteName1().getName() + " - " + " " + javelin.getAthleteName2().getName() + "  " + javelin.getMetre1() + "  " + "  " + javelin.getMetre2();
+
             }
         });
 
