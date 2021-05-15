@@ -14,7 +14,9 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.navigation.NavController;
 
+import com.example.roomtest.athlete.Athlete;
 import com.example.roomtest.room.MyDatabase;
+import com.example.roomtest.sport.Sport;
 import com.example.roomtest.sport.SportFragment;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -44,15 +46,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         myDatabase = Room.databaseBuilder(getApplicationContext(), MyDatabase.class, "userBd").allowMainThreadQueries().build();
 //        myDatabase.mydaotemp().insertSport(new Sport(1, "Football", "Team", "Male"));
 //        myDatabase.mydaotemp().insertAthlete(new Athlete(1, 1, "tets", "tets", "tets", "tets", "tets"));
+//        myDatabase.mydaotemp().insertAthlete(new Athlete(2, 1, "tets", "tets", "tets", "tets", "tets"));
 
 
         System.out.println(myDatabase.mydaotemp().findAllAthletes());

@@ -20,12 +20,15 @@ public class Sport {
     @ColumnInfo(name = "gender")
     private String gender;
 
-   /* public Sport(int id, String name, String kind, String gender) {
+    public Sport() {
+    }
+
+    public Sport(int id, String name, String kind, String gender) {
         this.id = id;
         this.name = name;
         this.kind = kind;
         this.gender = gender;
-    } */
+    }
 
     public int getId() {
         return id;

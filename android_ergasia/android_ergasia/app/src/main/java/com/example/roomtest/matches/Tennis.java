@@ -16,6 +16,9 @@ public class Tennis {
     private Athlete athleteName1;
     private Athlete athleteName2;
 
+    public Tennis() {
+    }
+
     public Tennis(String date, String city, String country, Sport sport, Athlete athleteId1, Athlete athleteId2, Integer score1, Integer score2, Athlete athleteName1, Athlete athleteName2) {
         this.date = date;
         this.city = city;

@@ -4,17 +4,26 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
 
 import com.example.roomtest.sport.Sport;
 
-@Entity(tableName = "athlete", primaryKeys = {"id","id_sport"},
-        foreignKeys = {@ForeignKey(entity = Sport.class, parentColumns = "id", childColumns = "id_sport", onDelete = ForeignKey.CASCADE, onUpdate = ForeignKey.CASCADE)})
+import static androidx.room.ForeignKey.CASCADE;
+
+@Entity(tableName = "athlete")
 public class Athlete {
 
-    @ColumnInfo(name = "id")
+    @PrimaryKey
     @NonNull
     private int id;
 
+    @ForeignKey
+            (entity = Sport.class,
+                    parentColumns = "id",
+                    childColumns = "id_sport",
+                    onUpdate = CASCADE,
+                    onDelete = CASCADE
+            )
     @ColumnInfo(name = "id_sport")
     @NonNull
     private int idSport;
@@ -34,7 +43,10 @@ public class Athlete {
     @ColumnInfo(name = "birthday")
     private String birthday;
 
-    /*public Athlete(int id, int idSport, String name, String surname, String city, String country, String birthday) {
+    public Athlete() {
+    }
+
+    public Athlete(int id, int idSport, String name, String surname, String city, String country, String birthday) {
         this.id = id;
         this.idSport = idSport;
         this.name = name;
@@ -42,7 +54,7 @@ public class Athlete {
         this.city = city;
         this.country = country;
         this.birthday = birthday;
-    }*/
+    }
 
     public int getId() {
         return id;

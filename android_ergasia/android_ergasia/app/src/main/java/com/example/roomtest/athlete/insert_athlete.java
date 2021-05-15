@@ -1,7 +1,6 @@
 package com.example.roomtest.athlete;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,24 +8,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.roomtest.MainActivity;
 import com.example.roomtest.R;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class insert_athlete extends Fragment {
-    EditText id_athlete,name_athlete,surname_athlete,country_athlete,city_athlete,bday_athlete,id_sport;
+    EditText id_athlete, name_athlete, surname_athlete, country_athlete, city_athlete, bday_athlete, id_sport;
     Button button;
     public static FirebaseFirestore db;
 
     public insert_athlete() {
         // Required empty public constructor
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -39,42 +35,38 @@ public class insert_athlete extends Fragment {
         city_athlete = view.findViewById(R.id.City_Stadium);
         bday_athlete = view.findViewById(R.id.Establishment);
         id_sport = view.findViewById(R.id.Code_Sport);
-        button= view.findViewById(R.id.update_team_button);
+        button = view.findViewById(R.id.update_team_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int Var_athleteId= 0;
+                int athleteId = 0;
                 try {
-                    Var_athleteId = Integer.parseInt(id_athlete.getText().toString());
+                    athleteId = Integer.parseInt(id_athlete.getText().toString());
                 } catch (NumberFormatException ex) {
                     System.out.println("Could not parse " + ex);
                 }
 
+                String athletename = name_athlete.getText().toString();
 
-                String Var_athletename=name_athlete.getText().toString();
+                String Var_athleteLname = surname_athlete.getText().toString();
 
-                String Var_athleteLname=surname_athlete.getText().toString();
+                String Var_athleteCountry = country_athlete.getText().toString();
+                String Var_athleteCity = city_athlete.getText().toString();
 
-                String Var_athleteCountry=country_athlete.getText().toString();
-                String Var_athleteCity=city_athlete.getText().toString();
+                String Var_athleteBday = bday_athlete.getText().toString();
 
-
-                String Var_athleteBday=bday_athlete.getText().toString();
-
-
-                int Var_athleteSid= 0;
+                int sportId = 0;
                 try {
-                    Var_athleteSid = Integer.parseInt(id_athlete.getText().toString());
+                    sportId = Integer.parseInt(id_sport.getText().toString());
                 } catch (NumberFormatException ex) {
                     System.out.println("Could not parse " + ex);
                 }
 
-
                 try {
-                    Athlete athletes= new Athlete();
-                    athletes.setId(Var_athleteId);
-                    athletes.setIdSport(Var_athleteSid);
-                    athletes.setName(Var_athletename);
+                    Athlete athletes = new Athlete();
+                    athletes.setId(athleteId);
+                    athletes.setIdSport(sportId);
+                    athletes.setName(athletename);
                     athletes.setSurname(Var_athleteLname);
                     athletes.setCity(Var_athleteCity);
                     athletes.setCountry(Var_athleteCountry);
@@ -87,10 +79,13 @@ public class insert_athlete extends Fragment {
 
                     // Create a new user with a first and last name
 
-
-                    db.collection("athlete").document(""+Var_athleteId).set(athletes).
-                            addOnCompleteListener((task)-> {Toast.makeText(getActivity(),"Added Record",Toast.LENGTH_LONG).show();})
-                            .addOnFailureListener((e)->{Toast.makeText(getActivity(),"Fail",Toast.LENGTH_LONG).show();});
+                    db.collection("athlete").document("" + athleteId).set(athletes).
+                            addOnCompleteListener((task) -> {
+                                Toast.makeText(getActivity(), "Added Record", Toast.LENGTH_LONG).show();
+                            })
+                            .addOnFailureListener((e) -> {
+                                Toast.makeText(getActivity(), "Fail", Toast.LENGTH_LONG).show();
+                            });
 // Add a new document with a generated ID
                    /* Log.d("hfhf", "DocumentSnapshot added with ID: blblb " );
                     db.collection("athlete")
@@ -124,7 +119,6 @@ public class insert_athlete extends Fragment {
 
         return view;
     }
-
 
 
 }
